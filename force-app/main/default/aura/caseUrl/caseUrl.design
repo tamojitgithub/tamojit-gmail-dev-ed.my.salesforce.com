@@ -1,0 +1,5 @@
+<design:component>
+	<design:attribute name="caseRec" label="Parent Case"/>
+    <design:attribute name="caseId" label=""/>
+    <design:attribute name="caserecordId" label="Parent Case" />
+</design:component>

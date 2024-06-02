@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Data_Correction_Case</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Account Data Correction</label>
+    <queue>Account_Data_Correction</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

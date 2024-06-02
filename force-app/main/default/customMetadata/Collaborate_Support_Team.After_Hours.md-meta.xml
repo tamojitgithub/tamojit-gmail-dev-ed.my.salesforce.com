@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>After Hours</label>
+    <protected>false</protected>
+    <values>
+        <field>Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>Queue__c</field>
+        <value xsi:type="xsd:string">AFTER HOURS ENGLISH</value>
+    </values>
+    <values>
+        <field>Reason__c</field>
+        <value xsi:type="xsd:string">POLICY QUESTION</value>
+    </values>
+    <values>
+        <field>Support_Team__c</field>
+        <value xsi:type="xsd:string">CENTRALIZED TECH EXPERT</value>
+    </values>
+    <values>
+        <field>Type__c</field>
+        <value xsi:type="xsd:string">Chat</value>
+    </values>
+    <values>
+        <field>buttonId__c</field>
+        <value xsi:type="xsd:string">5733i0000000hLH</value>
+    </values>
+</CustomMetadata>

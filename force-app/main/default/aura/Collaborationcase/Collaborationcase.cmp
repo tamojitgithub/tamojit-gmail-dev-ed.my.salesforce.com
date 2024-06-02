@@ -1,0 +1,64 @@
+<aura:component  controller="CollaborateInternalCase" implements="force:hasRecordId,force:lightningQuickAction,lightning:availableForFlowScreens,force:appHostable" access="global" >
+    
+    <aura:attribute name="optionList" type="Collaborate_Support_Team__mdt[]"  description="to store Support Team Custom MetaData"/>     
+    <aura:attribute name="SupportTeam" type="String" access="global" description="To get  the Support Team value from the flow"/>
+    <aura:attribute name="caseRec" type="String" access="global" description="To get the case record Id from the Flow"/>
+    <aura:attribute name="caserecordId" type="String" />
+    <aura:attribute name="currentUser" type="User" description="To Store the current User Information"/>
+    <aura:attribute name="AccountId" type="string" access="global" description="To get the AccountId  of the case from the Flow"/>
+    <aura:attribute name="AccountIdValue" type="string" />
+    <aura:attribute name="SupportTeamValue" type="string" />
+    <aura:attribute name="AssetId" type="string" access="global" description="To get the AssetId  of the case from the Flow"/>
+    <aura:attribute name="AssetIdValue" type="string"/>
+    <aura:attribute name="ContactId" type="string" access="global" description="To get the ContactId  of the case from the Flow"/>
+    <aura:attribute name="ContactIdValue" type="string"/>
+    <aura:attribute name="currentUserName" type="string" />
+    <aura:attribute name="caseNum" type="string" access="global" description="To get the Case Number of the case from the Flow"/>
+    <Aura:attribute name="CaseNumValue" type="string"/>
+    <Aura:attribute name="Type" type="string"/>
+    
+    <aura:handler name="init" value="this" action="{!c.doInit}"/>
+    
+    <lightning:layoutItem size="12" padding="around-small">    
+        <lightning:select aura:id="queueId"  name="queue" label="Queue"  onchange="{!c.onlineOrChat}" required="true" >
+            <option value="--None--">--None--</option>
+            <aura:iteration items="{!v.optionList}" var="val">                 
+                <aura:if isTrue="{!not(empty(val.Queue__c))}">
+                    <option value="{!val.Id}">{!val.Queue__c}</option>
+                </aura:if>           
+            </aura:iteration>
+        </lightning:select>
+        
+        <lightning:select aura:id="reason"  name="Reason" label="Reason" required="true" >
+            <option value="--None--">--None--</option>
+            <aura:iteration items="{!v.optionList}" var="valReason">
+                <aura:if isTrue="{!not(empty(valReason.Reason__c))}">
+                    <option value="{!valReason.Reason__c}">{!valReason.Reason__c}</option>
+                </aura:if>
+            </aura:iteration>
+            
+        </lightning:select>
+        
+        <lightning:input type="text" aura:id="title" label="Case Title" name = "Title" required="true" messageWhenValueMissing="Title is Mandatory" />
+        <lightning:textarea aura:id="Desc" label="Description" name = "Description"  required="true" messageWhenValueMissing="Description is Mandatory"/>
+        
+        
+        <div class="slds-col">            
+            <ui:inputCheckbox  aura:id="custStatus"  label="Customer Waiting"/>   
+        </div>
+    </lightning:layoutItem>
+    
+ <div class="slds-col">
+        <aura:if isTrue="{!v.Type=='Chat'}">
+            <lightning:button variant="brand" aura:id="btnTextChat" label="{!$Label.c.chat}" onclick="{! c.startCollaborateChat }" />           
+        </aura:if>
+        <aura:if isTrue="{!v.Type=='Case'}">
+            <lightning:layout >
+                <lightning:button variant="brand" aura:id="btnTextCaseCreate" label="{!$Label.c.Create_Case}" onclick="{!c.startCreateCase}" />  
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    {!$Label.c.Create_Case_Message}
+                </lightning:layoutItem>
+            </lightning:layout>  
+        </aura:if>
+    </div>
+</aura:component>

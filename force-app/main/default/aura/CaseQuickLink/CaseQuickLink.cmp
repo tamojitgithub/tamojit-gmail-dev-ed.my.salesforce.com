@@ -1,0 +1,45 @@
+<!--
+*******************************************************************************************************
+Name:            CaseQuickLink.cmp
+Apex Controller: CaseQuickLinkController
+*******************************************************************************************************
+Date         Version            Author                Summary of Changes 
+*******************************************************************************************************
+06/28/2018     1.0			Srikanth Parvathareddy       Initial Release
+07/12/2018	   1.2		    Brundha	     				 Defect #5323980
+08/06/2020     1.3          Harsha Reddy                 Updated Controller JS and Helper JS as per 
+														 Lightning Best Practices - Code Review Defect
+*******************************************************************************************************
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="CaseQuickLinkController">  
+    <aura:attribute name="selectedValue" type="String"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="assetName" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+     
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">  
+            <div class="slds-media__figure">
+                <span class="slds-icon_container slds-icon-standard-contact" title="Support">
+                    <lightning:icon iconName="standard:link" alternativeText="Support" size="small"/>
+                </span>
+            </div>
+            <div class="slds-media__body slds-truncate" > 
+                <span class="slds-text-heading_small slds-truncate">Quick Links</span>    
+            </div>  
+        </div>  
+        <ui:scrollerWrapper class="scrollerSize slds-p-around_x-small">
+            <div class="slds-card__body" style="height: 50px;">
+                <ui:inputSelect aura:Id="mySelect" multiple="false" label="Contextual links for this asset:" value="{!v.selectedValue}" change="{!c.changeEvent}" >
+                    <ui:inputSelectOption label="Select an Option" text="SelectOptions" value="true"/>
+                    <ui:inputSelectOption label="Support Assist Tech Console (SATC)" text="SATC"/>
+                    <ui:inputSelectOption label="TechDirect" text="TechDirect" />
+                    <ui:inputSelectOption label="Spare Parts Master Database (SPMD)" text="SPMD"/>
+                    <ui:inputSelectOption label="Service Tag Lookup (Qi)" text="SQi"/>
+                    <ui:inputSelectOption label="Dell.com/support" text="DellSupport"/>
+                </ui:inputSelect>
+            </div>    
+        </ui:scrollerWrapper>    
+    </article>
+</aura:component>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LiveChatAgentConfig xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <profiles>
+            <profile>Admin</profile>
+            <profile>StandardAul</profile>
+            <profile>Analytics Cloud Integration User</profile>
+            <profile>Analytics Cloud Security User</profile>
+            <profile>Cross Org Data Proxy User</profile>
+            <profile>Custom%3A Marketing Profile</profile>
+            <profile>Custom%3A Sales Profile</profile>
+            <profile>Custom%3A Support Profile</profile>
+            <profile>Force%2Ecom - App Subscription User</profile>
+            <profile>Force%2Ecom - Free User</profile>
+            <profile>Identity User</profile>
+            <profile>Standard</profile>
+            <profile>SolutionManager</profile>
+            <profile>MarketingProfile</profile>
+            <profile>ContractManager</profile>
+            <profile>Partner App Subscription User</profile>
+            <profile>Read Only</profile>
+            <profile>Work%2Ecom Only User</profile>
+        </profiles>
+    </assignments>
+    <disableTransferConferenceGreeting>false</disableTransferConferenceGreeting>
+    <enableAgentFileTransfer>false</enableAgentFileTransfer>
+    <enableAgentSneakPeek>true</enableAgentSneakPeek>
+    <enableAssistanceFlag>false</enableAssistanceFlag>
+    <enableAutoAwayOnDecline>false</enableAutoAwayOnDecline>
+    <enableAutoAwayOnPushTimeout>false</enableAutoAwayOnPushTimeout>
+    <enableChatConferencing>true</enableChatConferencing>
+    <enableChatMonitoring>true</enableChatMonitoring>
+    <enableChatTransferToAgent>true</enableChatTransferToAgent>
+    <enableChatTransferToButton>true</enableChatTransferToButton>
+    <enableChatTransferToSkill>true</enableChatTransferToSkill>
+    <enableLogoutSound>false</enableLogoutSound>
+    <enableNotifications>false</enableNotifications>
+    <enableRequestSound>false</enableRequestSound>
+    <enableSneakPeek>false</enableSneakPeek>
+    <enableVisitorBlocking>false</enableVisitorBlocking>
+    <enableWhisperMessage>true</enableWhisperMessage>
+    <label>After Hours</label>
+    <supervisorDefaultAgentStatusFilter>Online</supervisorDefaultAgentStatusFilter>
+    <supervisorDefaultButtonFilter>After_Hours</supervisorDefaultButtonFilter>
+    <supervisorDefaultSkillFilter>English</supervisorDefaultSkillFilter>
+    <supervisorSkills>
+        <skill>English</skill>
+    </supervisorSkills>
+    <transferableSkills>
+        <skill>English</skill>
+    </transferableSkills>
+</LiveChatAgentConfig>

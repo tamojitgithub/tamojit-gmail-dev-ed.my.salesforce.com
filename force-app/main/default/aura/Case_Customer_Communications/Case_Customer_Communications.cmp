@@ -1,0 +1,17 @@
+<!--
+*******************************************************************************************************
+Name:       Dispatch_VendorCommunication.cmp
+Description:  This Lightning Component will show the Dispatch Instruction Record under Vendor Communication tab on WorkOrder
+Req #: 5049187
+*******************************************************************************************************
+-->
+<aura:component controller = "Case_Customer_Communications" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}" />
+    <aura:attribute name="WorkorderId" type="List" access="global"/>
+    <aura:attribute name="displayDispatchInstructionList" type="Case[]" access='global'/>
+    <lightning:workspaceAPI aura:id="workspace" />
+    <aura:handler event="lightning:tabRefreshed" action="{!c.onTabRefreshed}"/>
+    <aura:iteration var="displayFeed" items="{!v.displayDispatchInstructionList}">   
+        <forceChatter:feed type="Record" subjectId="{!displayFeed.Id}"/>
+    </aura:iteration> 
+</aura:component>

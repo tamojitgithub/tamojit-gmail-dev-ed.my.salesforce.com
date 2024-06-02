@@ -1,0 +1,8 @@
+<design:component>
+    <design:attribute name="SupportTeam" label="Selected Support Team"/>
+    <design:attribute name="caseRec" label="Parent Case"/>
+    <design:attribute name="AccountId" label="Account"/>
+    <design:attribute name="ContactId" label="Contact"/>
+    <design:attribute name="AssetId" label="Asset"/>
+    <design:attribute name="caseNum" label="Case Number"/>  
+</design:component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PassComm__IsCommunityUser__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>IF(OR(ISPICKVAL( Profile.UserType, &quot;PowerCustomerSuccess&quot;), 
+ISPICKVAL( Profile.UserType, &quot;CustomerSuccess&quot;),
+ISPICKVAL( Profile.UserType, &quot;CspLitePortal&quot;),
+ISPICKVAL( Profile.UserType, &quot;PowerPartner&quot;)
+), true, false)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IsCommunityUser</label>
+    <type>Checkbox</type>
+</CustomField>

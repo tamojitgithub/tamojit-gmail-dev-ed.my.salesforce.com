@@ -1,0 +1,27 @@
+<!--
+*******************************************************************************************************
+Name:       SRVS_ToolsLinks.cmp
+Description:  This Lightning Component displays the quick links on Tools Utility bar.  - Story 4599844
+*******************************************************************************************************
+Date         Version    Author             Summary of Changes 
+*******************************************************************************************************
+Feb 2,2018    1.0      R.Hari Krishna      Initial Release
+*******************************************************************************************************
+-->
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >  
+        
+    <lightning:card iconName="standard:link">
+        <aura:set attribute="title">
+            Non-Contextual Links
+        </aura:set>        
+        <div class="slds-p-horizontal_large">
+            <ul class="slds-has-dividers_around">
+                <li><ui:outputURL value="{!$Label.c.SRVS_Turbo_Tech}" target="_blank" label="Turbo Tech" /></li>
+                <li><ui:outputURL value="{!$Label.c.SRVS_Support_Assist_Tech_Console_Home}" target="_blank" label="Support Assist Tech Console (SATC)" /></li>
+                <li><ui:outputURL value="{!$Label.c.SRVS_Tech_Direct_Home}" target="_blank" label="TechDirect" /></li>
+                <li><ui:outputURL value="{!$Label.c.SRVS_Spare_Parts_Master_Database_Home}" target="_blank" label="Spare Parts Master Database (SPMD)" /></li>
+                <li><ui:outputURL value="{!$Label.c.SRVS_Service_Tag_Lookup_Qi_Home}" target="_blank" label="Service Tag Lookup (Qi)" /></li>                                
+            </ul>
+        </div>
+    </lightning:card>
+</aura:component>

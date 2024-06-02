@@ -1,0 +1,11 @@
+<aura:component  implements="force:hasRecordId,force:lightningQuickAction,lightning:availableForFlowScreens,force:appHostable" access="global" >
+
+   <aura:attribute name="caseId" type="String" access="global" 
+                    description="To get the case record Id from the Flow"/>
+    <aura:attribute name="caseRec" type="String" access="global" 
+                    description="To get the case record Id from the Flow"/>
+    <aura:attribute name="caserecordId" type="String" access="global" 
+                    description="To get the case record Id from the Flow"/>
+    
+    
+</aura:component>
